@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ella’s Accessories Shop</title>
+  <title>Ella’s Accessories</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -14,84 +13,133 @@
 
     /* Navigation Bar */
     nav {
-      background-color: #f5d0c5;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      padding: 1rem;
+      background-color: #fff;
+      padding: 1rem 3rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
       position: sticky;
       top: 0;
-      z-index: 10;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav li {
-      position: relative;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-      padding: 0.5rem;
-    }
-
-    nav a:hover {
-      color: #a84834;
-    }
-
-    /* Dropdown */
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #fff;
-      min-width: 160px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-      border-radius: 8px;
-      top: 2.2rem;
-      left: 0;
       z-index: 100;
     }
 
-    .dropdown-content a {
-      display: block;
-      padding: 0.6rem 1rem;
+    .logo {
+      font-family: 'Georgia', serif;
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #c15a41;
+      letter-spacing: 1px;
+    }
+
+    .menu {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .menu a {
       color: #333;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
     }
 
-    .dropdown-content a:hover {
-      background-color: #f5d0c5;
+    .menu a:hover {
+      color: #c15a41;
     }
 
-    nav li:hover .dropdown-content {
-      display: block;
-    }
-
-    /* Header */
+    /* Banner Section */
     header {
-      background-color: #f5d0c5;
+      background-image: url('https://modandjo.com/cdn/shop/files/colbie-silver-web-5x7.png?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
       text-align: center;
-      padding: 2.5rem 1rem;
+      color: white;
+      padding: 6rem 1rem;
+      position: relative;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    header h1, header p {
+      position: relative;
+      z-index: 1;
     }
 
     header h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      font-family: 'Georgia', serif;
+      letter-spacing: 2px;
     }
 
     header p {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* About Section */
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      max-width: 1100px;
+      margin: 4rem auto;
+      padding: 2rem;
+      gap: 2rem;
+    }
+
+    .about img {
+      flex: 1 1 400px;
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .about .text {
+      flex: 1 1 400px;
+    }
+
+    .about .text h2 {
+      color: #c15a41;
+      font-family: 'Georgia', serif;
+      font-size: 1.8rem;
+    }
+
+    .about .text p {
+      line-height: 1.6;
       color: #555;
     }
 
-    /* Product grid */
+    /* Product Section */
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: 2rem auto 1rem auto;
+      padding: 0 2rem;
+    }
+
+    .section-title h2 {
+      font-size: 1.6rem;
+      color: #c15a41;
+      font-family: 'Georgia', serif;
+    }
+
+    .section-title a {
+      color: #c15a41;
+      text-decoration: underline;
+      font-style: italic;
+      font-weight: 500;
+    }
+
     .container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -129,100 +177,114 @@
       font-size: 1.2rem;
     }
 
-    .info p {
-      color: #777;
-      margin: 0.5rem 0 1rem 0;
-    }
-
     .price {
       font-weight: bold;
       color: #c15a41;
       font-size: 1.1rem;
     }
 
-    .btn {
-      background-color: #c15a41;
+    /* Care Section */
+    .care {
+      background-image: url('https://images.unsplash.com/photo-1618354691370-c7c96e0b95a1?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
       color: white;
-      padding: 0.6rem 1.2rem;
-      border-radius: 25px;
-      border: none;
-      cursor: pointer;
-      text-decoration: none;
-      font-size: 0.9rem;
+      text-align: center;
+      padding: 5rem 2rem;
+      position: relative;
     }
 
-    .btn:hover {
-      background-color: #a84834;
+    .care::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
     }
 
+    .care .content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .care h2 {
+      font-family: 'Georgia', serif;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .care p {
+      line-height: 1.6;
+      font-size: 1.1rem;
+    }
+
+    /* Footer */
     footer {
       background-color: #f5d0c5;
-      color: #333;
-      padding: 2rem 1rem;
+      padding: 2rem;
       text-align: center;
-    }
-
-    footer ul {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 1rem 0;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-    }
-
-    footer a {
-      text-decoration: none;
       color: #333;
+      font-size: 0.95rem;
     }
 
-    footer a:hover {
-      color: #a84834;
+    footer .footer-menu {
+      margin-bottom: 1rem;
     }
 
-    footer p {
-      margin: 0.3rem 0;
-      font-size: 0.9rem;
+    footer .footer-menu a {
+      margin: 0 0.8rem;
+      color: #333;
+      text-decoration: none;
+    }
+
+    footer .footer-menu a:hover {
+      color: #c15a41;
+    }
+
+    footer .contact {
+      margin-top: 0.5rem;
+      line-height: 1.4;
     }
 
   </style>
 </head>
 <body>
-
-  <!-- Navigation -->
   <nav>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Shop</a></li>
-      <li><a href="#">About</a></li>
-      <li class="dropdown">
-        <a href="#">Collections ▾</a>
-        <div class="dropdown-content">
-          <a href="#">Necklaces</a>
-          <a href="#">Bracelets</a>
-          <a href="#">Earrings</a>
-          <a href="#">Rings</a>
-        </div>
-      </li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <div class="logo">Ella’s Accessories</div>
+    <div class="menu">
+      <a href="#">Home</a>
+      <a href="#">Shop</a>
+      <a href="#">Collections</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </div>
   </nav>
 
-  <!-- Header -->
   <header>
-    <h1>Ella’s Accessories</h1>
-    <p>Chic & Simple | Handmade with love 💖</p>
+    <h1>Timeless Beauty, Everyday Elegance</h1>
+    <p>Discover handcrafted accessories that add a touch of charm to every outfit ✨</p>
   </header>
 
-  <!-- Product section -->
+  <section class="about">
+    <img src="https://raw.githubusercontent.com/shweyamininzali/ellas-accessories/refs/heads/main/istockphoto-617896650-612x612.jpg" alt="About Ella’s Accessories">
+    <div class="text">
+      <h2>About Ella’s Accessories</h2>
+      <p>At Ella’s Accessories, we believe that beauty lies in simplicity. Each piece is lovingly handmade to complement your natural style — whether it’s for a special occasion or your daily look. Our journey began with a passion for creativity and an eye for elegance, and today, we bring you designs that radiate confidence and sophistication.</p>
+    </div>
+  </section>
+
+  <div class="section-title">
+    <h2>New Arrivals</h2>
+    <a href="#"><i><u>Shop Now &gt;&gt;</u></i></a>
+  </div>
+
   <main class="container">
     <div class="product">
       <img src="https://m.media-amazon.com/images/I/61gNp5nBxbL._AC_SY535_.jpg" alt="Necklace">
       <div class="info">
         <h3>Gold Charm Necklace</h3>
         <p class="price">$22.90</p>
-        <a href="https://m.me/yourfacebook" class="btn">Order via Messenger</a>
       </div>
     </div>
 
@@ -231,7 +293,6 @@
       <div class="info">
         <h3>Minimalist Bracelet</h3>
         <p class="price">$14.50</p>
-        <a href="https://m.me/yourfacebook" class="btn">Order via Messenger</a>
       </div>
     </div>
 
@@ -240,36 +301,71 @@
       <div class="info">
         <h3>Pearl Drop Earrings</h3>
         <p class="price">$18.00</p>
-        <a href="https://m.me/yourfacebook" class="btn">Order via Messenger</a>
       </div>
     </div>
 
     <div class="product">
-      <img src="https://modandjo.com/cdn/shop/files/everyday-stacking-ring-set-gold-filled_77fba0e8-be09-4d0a-9930-ad872a4807e8.png?v=1728705656&width=1593" alt="Rings">
+      <img src="https://modandjo.com/cdn/shop/files/everyday-stacking-ring-set-gold-filled_77fba0e8-be09-4d0a-9930-ad872a4807e8.png?v=1728705656" alt="Rings">
       <div class="info">
         <h3>Stackable Rings Set</h3>
         <p class="price">$16.90</p>
-        <a href="https://m.me/yourfacebook" class="btn">Order via Messenger</a>
       </div>
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer id="contact">
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Shop</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Collections</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-    <p>📍 123 Artisan Lane, Yangon, Myanmar</p>
-    <p>📞 +95 9123456789</p>
-    <p>✉️ <a href="mailto:hello@ellasaccessories.com">hello@ellasaccessories.com</a></p>
-    <p>© 2025 Ella’s Accessories · Handmade with ❤️ · 
-      <a href="https://www.instagram.com/" style="color:#c15a41;text-decoration:none;">@ellas.accessories</a>
-    </p>
+  <main class="container">
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/61gNp5nBxbL._AC_SY535_.jpg" alt="Necklace">
+      <div class="info">
+        <h3>Gold Charm Necklace</h3>
+        <p class="price">$22.90</p>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/61k-Zl8C7CL._AC_SY535_.jpg" alt="Bracelet">
+      <div class="info">
+        <h3>Minimalist Bracelet</h3>
+        <p class="price">$14.50</p>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="https://thegoldenbear.com/cdn/shop/products/pearldropears-001-889_1000x.jpg?v=1640813390" alt="Earrings">
+      <div class="info">
+        <h3>Pearl Drop Earrings</h3>
+        <p class="price">$18.00</p>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="https://modandjo.com/cdn/shop/files/everyday-stacking-ring-set-gold-filled_77fba0e8-be09-4d0a-9930-ad872a4807e8.png?v=1728705656" alt="Rings">
+      <div class="info">
+        <h3>Stackable Rings Set</h3>
+        <p class="price">$16.90</p>
+      </div>
+    </div>
+  </main><section class="care">
+    <div class="content">
+      <h2>We Care About Every Detail</h2>
+      <p>From sourcing premium materials to handcrafting each design, we pour care and passion into everything we make. Every piece you receive has been thoughtfully inspected, beautifully packaged, and handled with love — because our customers deserve nothing less than excellence. 💝</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-menu">
+      <a href="#">Home</a> |
+      <a href="#">Shop</a> |
+      <a href="#">Collections</a> |
+      <a href="#">About</a> |
+      <a href="#">Contact</a>
+    </div>
+    <div class="contact">
+      <p>📍 123 Sunset Lane, Singapore 099999<br>
+      📧 contact@ellasaccessories.com<br>
+      © 2025 Ella’s Accessories · Handmade with ❤️</p>
+    </div>
   </footer>
 
-</body>
-</html>
+
+</body></html>
